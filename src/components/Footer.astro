@@ -5,14 +5,44 @@
 import Social from './Social.astro';
 ---
 
-<footer>
+<footer class="w-full outline-0 outline-black outline-offset-2 flex flex-row justify-around gap-4 mt-8">
     <!-- <p>¡Más información sobre mis proyectos en ¡<a class="font-bold uppercase" href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p> -->
     <Social platform="twitter" username="astrodotbuild" />
     <Social platform="github" username="withastro" />
     <Social platform="youtube" username="astrodotbuild" />
 </footer>
 
-<style>
+<!-- <style>
+    /* @tailwind base;
+    @tailwind components;
+    @tailwind utilities; */
+    @keyframes border-radius-animation {
+        0%, 100% {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        50% {
+            border-radius: 63% 37% 33% 67% / 30% 53% 47% 70%;
+        }
+    }
+    .animation-border-radius {
+        animation: border-radius-animation 2s infinite alternate;
+    }
+    
+    /* @layer utilities {
+        @keyframes border-radius-animation {
+            0%, 100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+            50% {
+                border-radius: 63% 37% 33% 67% / 30% 53% 47% 70%;
+            }
+        }
+        .animation-border-radius {
+            animation: border-radius-animation 2s infinite alternate;
+        }
+    } */
+</style> -->
+<!-- <style>
     footer {
         width: 100%;
         outline-width: 2px;
@@ -25,4 +55,4 @@ import Social from './Social.astro';
         gap: 1rem;
         margin-top: 2rem;
     }
-</style>
+</style> -->
