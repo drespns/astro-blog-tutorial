@@ -4,10 +4,12 @@ import '../styles/global.css'
 
 // Components
 // import Navigation from '../components/Navigation.astro'; // REFACTORIZANDO
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+// import Header from '../components/Header.astro';
+// import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const titleBlogPage = 'Astro tutorial - Learning how to create stunningly fast web applications'
+const titleBlogPage = 'Astro 🚀 - Learning how to create stunningly fast web applications';
+const title = 'Blog'
 
 const posts = [
     { id: 1, title: "Publicación 1", href: "/posts/post-1/" },
@@ -16,53 +18,42 @@ const posts = [
 ];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{titleBlogPage} 🚀</title>
-	</head>
-	<body>
-        <Header />
+<BaseLayout titlePage={titleBlogPage} title={title}>
+    <!-- <h1>Mi blog de Astro aprendizaje</h1> -->
+    <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
+    <!-- <ul>
+        <li>
+            <a href="/posts/post-1/"> (relativo a 'index')
+                Publicación 1
+            </a>
+        </li>
+        <li>
+            <a href="/posts/post-2/">
+                Publicación 2
+            </a>
+        </li>
+        <li>
+            <a href="/posts/post-3/">
+                Publicación 3
+            </a>
+        </li>
+    </ul> -->
+    <ul>
+        {
+            posts.map((post) => {
+                return (
+                    <li>
+                        <a href={post.href} target="_blank" rel="noopener noreferer">
+                            {post.title}
+                        </a>
+                    </li>
+                )
+            })
+        }
+    </ul>
 
-		<h1>Mi blog de Astro aprendizaje</h1>
-        <p>Aquí es donde publicaré sobre mi viaje de aprendizaje Astro.</p>
-        <!-- <ul>
-            <li>
-                <a href="/posts/post-1/"> (relativo a 'index')
-                    Publicación 1
-                </a>
-            </li>
-            <li>
-                <a href="/posts/post-2/">
-                    Publicación 2
-                </a>
-            </li>
-            <li>
-                <a href="/posts/post-3/">
-                    Publicación 3
-                </a>
-            </li>
-        </ul> -->
-        <ul>
-            {
-                posts.map((post) => {
-                    return (
-                        <li>
-                            <a href={post.href} target="_blank" rel="noopener noreferer">
-                                {post.title}
-                            </a>
-                        </li>
-                    )
-                })
-            }
-        </ul>
-
-        <Footer />
-        <script>
-            import "../scripts/menu.js";
-        </script>
-	</body>
-</html>
+    <!-- <Footer />
+    <script>
+        import "../scripts/menu.js";
+    </script> -->
+</BaseLayout>

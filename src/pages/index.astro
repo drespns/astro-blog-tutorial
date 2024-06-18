@@ -4,37 +4,14 @@ import '../styles/global.css';
 // import '../scripts/menu.js';
 
 // import Navigation from '../components/Navigation.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-const titleIndexPage = 'Astro tutorial - Learning how to create stunningly fast web applications'
-const title = '🤖Creando un blog en Astro 🚀'
+const titlePage = 'Astro 🚀 - Learning how to create stunningly fast web applications'
+const title = '🤖 Creando un blog en Astro 🚀'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{titleIndexPage}</title>
-	</head>
-	<body>
-		<Header />
-
-		<h1>{title}</h1>
-
-		<Footer />
-		<!-- <script>
-			document.querySelector('.hamburger')
-				.addEventListener('click', () => {
-					const navLinks = document.querySelector('.nav-links');
-					navLinks.classList.toggle('expanded');
-				}
-			);
-		</script> --> <!-- menu.js -->
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+<BaseLayout titlePage={titlePage} title={title}>
+	<h2>
+		Hola
+	</h2>
+</BaseLayout>
