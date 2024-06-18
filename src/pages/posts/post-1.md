@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/markdown/PostLayout.astro
 title: 'Mi primera publicación en el blog'
 # frontmatter
 pubDate: 2024-06-18
@@ -8,11 +9,25 @@ image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'Goku'
 tags: ["astro", "bloguear", "aprender en público"]
+# EXTRA:
+slug: 'mi-primera-publicacion'
+categories: ['Desarrollo', 'Tutorial']
+draft: false
+excerpt: 'Aprende a usar Astro para crear un blog asombroso con este primer tutorial.'
+readingTime: '5 min'
+featured: true
+seo:
+    metaTitle: 'Mi primera publicación en Astro Blog'
+    metaDescription: 'Este es la primera publicación de mi nuevo blog Astro.'
+social:
+    twitter: '@drespns'
+    facebook: 'drespns'
 ---
+```js
+document.querySelectorAll('img');
+```
+
 # Mi primera publicación en el blog
-
-Publicado el: 2024-06-18
-
 ¡Bienvenido a mi _nuevo blog_ sobre el aprendizaje de Astro! Aquí, voy a compartir mi viaje de aprendizaje a medida que construyo un nuevo sitio web.
 
 ## Lo que he conseguido
