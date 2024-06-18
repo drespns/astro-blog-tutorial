@@ -1,0 +1,19 @@
+---
+// interface Props
+import BaseLayout from "../BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+<BaseLayout titlePage="Mi super mega ultra blog" title="Blog">
+<!-- <section class="relative bg-slate-500"> -->
+    <!-- <h1> {frontmatter.title}</h1> -->
+    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <p>Escrito por: {frontmatter.author}</p>
+    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+    <slot />
+</BaseLayout>
+<!-- </section> -->
+
+<!-- <style>
+    section
+</style> -->
