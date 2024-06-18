@@ -1,5 +1,18 @@
 ---
+const pageTitle = "Sobre mi";
 
+const identity = {
+    firstName: "Daniel",
+    country: "España",
+    occupation: "Web Developer",
+    hobbies: ["fotografia", "observación de aves", "peñarol"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,7 +21,8 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About 🚀</title>
+		<!-- <title>About 🚀</title> -->
+		<title>{pageTitle} 🚀</title>
 	</head>
 	<body>
         <a href="/">
@@ -28,11 +42,37 @@
         </a>
 
 		<h1>Sobre mi...</h1>
-        <h2>... ¡y mi nuevo sitio Astro!</h2>
+        <h2 class="font-bold mb-4">... ¡y mi nuevo sitio Astro!</h2>
+
+        <ul>
+            <li>Mi nombre es: <strong>{identity.firstName}</strong></li>
+            <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}</li>
+            } <!-- RENDERIZADO CONDICIONAL (*) (js, jsx) <- condicion + operador logico + elemento a renderizar -->
+        </ul>
 
         <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, ¡y es la primera que he construido yo mismo!</p>
 
-        <p>Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
+        <p class="mb-4">Este sitio se irá actualizando a medida que vaya completando más partes del tutorial, ¡así que no dejes de visitarlo para ver cómo va mi viaje!</p>
+
+        <p>Mis habilidades:</p>
+        <ul>
+            <!-- <li></li>
+            <li></li>
+            <li></li>
+            <li></li> -->
+            {skills.map((skill) => <li>{skill}</li>)}
+            <!-- {skills.map((skill) => {return <li>{skill}</li>})} -->
+        </ul>
+
+        <!-- *RENDERIZACION CONDICIONAL -->
+        {happy && <p>¡Estoy feliz de aprender Astro!</p>}
+
+        {finished && <p>¡He terminado este tutorial!</p>}
+
+        {goal === 3 ? <p>Mi objetivo es terminar en 3 días.</p> : <p>Mi objetivo no son 3 días.</p>}
+        <!-- <<La sintaxis de plantillas de Astro es similar a la sintaxis JSX. Si alguna vez te preguntas cómo usar tu script en tu HTML, ¡buscar cómo se hace en JSX es probablemente un buen punto de partida!>> -->
 </body>
 	</body>
 </html>
